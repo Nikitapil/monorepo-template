@@ -1,35 +1,39 @@
-import {BuildOptions} from "../types/types";
-import {removeDataTestIdBabelPlugin} from "./removeDataTestIdBabelPlugin";
+import { BuildOptions } from '../types/types';
+import { removeDataTestIdBabelPlugin } from './removeDataTestIdBabelPlugin';
 
 export const buildBabelLoader = (options: BuildOptions) => {
-  const isDev = options.mode === 'development'
-  const isProd = options.mode === 'production'
+  const isDev = options.mode === 'development';
+  const isProd = options.mode === 'production';
 
-  const plugins = []
+  const plugins = [];
 
   if (isProd) {
-    plugins.push(
-      [removeDataTestIdBabelPlugin, {
-      props: ['data-testid']
-    }]
-    )
+    plugins.push([
+      removeDataTestIdBabelPlugin,
+      {
+        props: ['data-testid']
+      }
+    ]);
   }
 
   return {
     test: /\.tsx?$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: [
           '@babel/preset-env',
-          "@babel/preset-typescript",
-          ["@babel/preset-react", {
-          runtime: isDev ? 'automatic' : 'classic'
-        }]
+          '@babel/preset-typescript',
+          [
+            '@babel/preset-react',
+            {
+              runtime: isDev ? 'automatic' : 'classic'
+            }
+          ]
         ],
-        plugins: plugins
+        plugins
       }
     }
-  }
-}
+  };
+};

@@ -1,2 +1,2 @@
-import ('../../admin/src/bootstrap')
+import('./bootstrap');
 export {};
