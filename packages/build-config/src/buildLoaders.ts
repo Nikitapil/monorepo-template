@@ -1,12 +1,10 @@
 import { ModuleOptions } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import ReactRefreshTypeScript from 'react-refresh-typescript';
 import { BuildOptions } from './types/types';
 import { buildTSLoader } from './ts-loader-module/buildTSLoader';
 
 export const buildLoaders = (options: BuildOptions): ModuleOptions['rules'] => {
   const isProd = options.mode === 'production';
-  const isDev = options.mode === 'development';
 
   const assetLoader = {
     test: /\.(png|jpg|jpeg|gif)$/i,

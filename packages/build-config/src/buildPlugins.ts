@@ -2,7 +2,6 @@ import webpack, { Configuration, DefinePlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
@@ -19,7 +18,7 @@ export const buildPlugins = (options: BuildOptions): Configuration['plugins'] =>
       publicPath: '/'
     }),
     new DefinePlugin({
-      __PLATFORM__: JSON.stringify(options.platform)
+      PLATFORM: JSON.stringify(options.platform)
     })
   ];
 
