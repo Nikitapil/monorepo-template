@@ -17,6 +17,7 @@ export const buildPlugins = (options: BuildOptions): Configuration['plugins'] =>
       favicon: path.resolve(options.path.public, 'favicon.ico'),
       publicPath: '/'
     }),
+    // To add global build constants or functions definePlugin(in this example global constant is PLATFORM)
     new DefinePlugin({
       PLATFORM: JSON.stringify(options.platform)
     })
