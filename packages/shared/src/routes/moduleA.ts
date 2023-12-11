@@ -1,3 +1,3 @@
-export const adminRotes = {
-  about: '/admin/about'
+export const moduleARoutes = {
+  about: '/moduleA/about'
 };

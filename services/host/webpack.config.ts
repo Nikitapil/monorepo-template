@@ -9,12 +9,12 @@ interface EnvVariables {
   platform: BuildPlatform;
   analyzer?: boolean;
   SHOP_REMOTE_URL?: string;
-  ADMIN_REMOTE_URL?: string;
+  MODULE_A_REMOTE_URL?: string;
 }
 
 export default (env: EnvVariables) => {
   const SHOP_REMOTE_URL = env.SHOP_REMOTE_URL ?? 'http://localhost:3001';
-  const ADMIN_REMOTE_URL = env.ADMIN_REMOTE_URL ?? 'http://localhost:3002';
+  const MODULE_A_REMOTE_URL = env.MODULE_A_REMOTE_URL ?? 'http://localhost:3002';
 
   const config: webpack.Configuration = buildWebpack({
     port: env.port ?? 3000,
@@ -37,7 +37,7 @@ export default (env: EnvVariables) => {
 
       remotes: {
         shop: `shop@${SHOP_REMOTE_URL}/remoteEntry.js`,
-        admin: `admin@${ADMIN_REMOTE_URL}/remoteEntry.js`
+        moduleA: `moduleA@${MODULE_A_REMOTE_URL}/remoteEntry.js`
       },
       shared: {
         ...packageJson.dependencies,

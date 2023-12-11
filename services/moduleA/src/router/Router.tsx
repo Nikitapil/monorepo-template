@@ -5,7 +5,7 @@ import { LazyAbout } from '@/pages/about/About.lazy';
 
 const routes = [
   {
-    path: '/admin',
+    path: '/moduleA',
     element: <App />,
     children: [
       {
