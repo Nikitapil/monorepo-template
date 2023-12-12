@@ -5,7 +5,7 @@ import { Shop } from '@/pages/shop';
 
 const routes = [
   {
-    path: '/shop',
+    path: '/moduleB',
     element: <App />,
     children: [
       {

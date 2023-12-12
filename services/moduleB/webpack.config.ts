@@ -27,7 +27,7 @@ export default (env: EnvVariables) => {
 
   config.plugins.push(
     new webpack.container.ModuleFederationPlugin({
-      name: 'shop',
+      name: 'moduleB',
       filename: 'remoteEntry.js',
       exposes: {
         './Router': './src/router/Router.tsx'

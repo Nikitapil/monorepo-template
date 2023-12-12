@@ -1,15 +1,16 @@
 import { Link, Outlet } from 'react-router-dom';
-import { moduleARoutes, shopRoutes } from '@packages/shared';
+import { moduleARoutes, moduleBRoutes } from '@packages/shared';
+import styles from './App.module.scss';
 
 export const App = () => {
   return (
     <div data-testid="App">
-      <h1>HOST MODULE</h1>
-      <Link to={moduleARoutes.about}>About</Link>
+      <h1 className={styles.title}>HOST MODULE</h1>
+      <Link to={moduleARoutes.about}>About(ModuleA)</Link>
       <br />
-      <Link to={shopRoutes.main}>Shop</Link>
+      <Link to={moduleBRoutes.main}>Main(ModuleB)</Link>
       <br />
-      <Link to={shopRoutes.second}>Shop2</Link>
+      <Link to={moduleBRoutes.second}>Second(ModuleB)</Link>
       <Outlet />
     </div>
   );

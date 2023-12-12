@@ -1,4 +1,4 @@
-export { shopRoutes } from './routes/shop';
+export { moduleBRoutes } from './routes/moduleB';
 export { moduleARoutes } from './routes/moduleA';
 
 export const sum = (a: number, b: number) => {

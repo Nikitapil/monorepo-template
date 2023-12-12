@@ -1,12 +1,12 @@
 {
-  "name": "shop",
+  "name": "module-b",
   "version": "1.0.0",
   "scripts": {
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "build:mobile": "webpack --env mode=production --env platform=mobile",
     "build:desktop": "webpack --env mode=production --env platform=desktop",
-    "start": "webpack serve --env mode=development"
+    "dev": "webpack serve --env mode=development"
   },
   "dependencies": {
     "@packages/shared": "*",
