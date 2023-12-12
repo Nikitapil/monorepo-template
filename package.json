@@ -6,6 +6,10 @@
     "services/*"
   ],
   "scripts": {
+    "dev": "concurrently \"npm run dev:moduleA\" \"npm run dev:moduleB\" \"npm run dev:host\"",
+    "dev:moduleA": "cd services/moduleA && npm run dev",
+    "dev:moduleB": "cd services/moduleB && npm run dev",
+    "dev:host": "cd services/host && npm run dev",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
@@ -21,5 +25,8 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.1.1"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
   }
 }
