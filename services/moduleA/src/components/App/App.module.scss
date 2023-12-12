@@ -1,4 +1,6 @@
+@import "@packages/shared/styles/vars";
+
 .title {
-    font-size: 18px;
+    font-size: $titleSize;
     font-weight: 700;
 }
