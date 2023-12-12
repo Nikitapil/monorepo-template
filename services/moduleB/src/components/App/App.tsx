@@ -4,7 +4,7 @@ import styles from './App.module.scss';
 export const App = () => {
   return (
     <div data-testid="App">
-      <h1 className={styles.title}>SHOP MODULE</h1>
+      <h1 className={styles.title}>MODULE B</h1>
       <Outlet />
     </div>
   );

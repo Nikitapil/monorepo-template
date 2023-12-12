@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import { TestComponent } from '@packages/shared';
+import { Main } from '@/pages/main';
 import { App } from '@/components/App/App';
-import { Shop } from '@/pages/shop';
 
 const routes = [
   {
@@ -12,7 +13,7 @@ const routes = [
         path: 'main',
         element: (
           <Suspense fallback="Loading...">
-            <Shop />
+            <Main />
           </Suspense>
         )
       },
@@ -20,7 +21,9 @@ const routes = [
         path: 'second',
         element: (
           <Suspense fallback="Loading...">
-            <div>Second</div>
+            <div>
+              <TestComponent />
+            </div>
           </Suspense>
         )
       }
